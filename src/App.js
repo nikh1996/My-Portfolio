@@ -15,7 +15,7 @@ function App() {
 
 function IntroDiv() {
   return (
-    <section id="Intro" className="App-header">
+    <section id="Intro" className="Intro-div">
     <div className="backgroundOverlay">
       <video autoPlay loop muted className="Background-video" src="water.mp4"></video>
     </div>
@@ -29,7 +29,7 @@ function IntroDiv() {
 
 function AboutDiv() {
   return (
-    <section id="About_me" className="App-header">
+    <section id="About_me" className="About-div">
     <div className="Inner-text">
       <h1 className="Title">About me</h1>
     </div>
