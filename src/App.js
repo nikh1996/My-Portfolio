@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 const position = ['Node.js developer', 'PHP developer', 'React learner'];
+const positionCount = position.length;
+let currentPosition = 0;
 
 function App() {
   return (
@@ -14,12 +16,13 @@ function App() {
 function IntroDiv() {
   return (
     <section id="Intro" className="App-header">
-    <div className="backgroundOverlay"></div>
+    <div className="backgroundOverlay">
+      <video autoPlay loop muted className="Background-video" src="water.mp4"></video>
+    </div>
     <div className="Inner-text fadeIn">
       <h1 className="Title">Hi, I'm Nikh!</h1>
       <p className="fadeIn">I'm a </p><Position></Position>
     </div>
-    <video autoPlay loop muted className="Background-video" src="water.mp4"></video>
   </section>
   )
 }
@@ -37,9 +40,11 @@ function AboutDiv() {
 class Position extends React.Component {
   constructor(props) {
     super(props);
-    let randomPosition = Math.floor(Math.random() * (position.length));
+    this.state = {currentPosition: currentPosition};
 
-    this.state = {randomPosition: randomPosition};
+    ++currentPosition;
+
+    if(currentPosition === positionCount) currentPosition = 0;
   }
 
   componentDidMount() {
@@ -54,16 +59,18 @@ class Position extends React.Component {
   }
 
   tick() {
-    let randomPosition = Math.floor(Math.random() * (position.length));
-
     this.setState({
-      randomPosition: randomPosition
+      currentPosition: currentPosition
     });
+
+    ++currentPosition;
+
+    if(currentPosition === positionCount) currentPosition = 0;
   }
 
   render() {
     return (
-      <p className="Subtitle">{position[this.state.randomPosition]}!</p>
+      <p className="Subtitle">{position[this.state.currentPosition]}!</p>
     );
   }
 }

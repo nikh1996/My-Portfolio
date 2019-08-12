@@ -21,6 +21,7 @@ body {
 
 .Inner-text {
   position: absolute;
+  z-index: 10;
 }
 
 .fadeIn {
@@ -57,9 +58,29 @@ body {
   }
 }
 
+.backgroundOverlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.backgroundOverlay:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(180deg,rgba(40,42,46,0),#282c34 95%);
+  z-index: 2;
+  content: "";
+}
+
 .Background-video {
   width: 100vw;
   height: 100vh;
+  opacity: 0.5;
   object-fit: cover;
 }
 
