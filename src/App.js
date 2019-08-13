@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { Link } from 'react-scroll'
+
 const position = ['Node.js developer', 'PHP developer', 'React learner'];
 const positionCount = position.length;
 let currentPosition = 0;
@@ -18,9 +20,9 @@ function App() {
 function Navbar() {
   return (
     <div className="Navbar">
-      <a href="#Intro" className="Navbar-button Home-button">Home</a>
-      <a href="#About_me" className="Navbar-button About-button">About Me</a>
-      <a href="#Contact_me" className="Navbar-button Contact-button">Contact</a>
+      <Link activeClass="active" className="Navbar-button Home-button" to="Intro" smooth={true} duration={500} >Home</Link>
+      <Link activeClass="active" className="Navbar-button About-button" to="About_me" smooth={true} duration={500} >About Me</Link>
+      <Link activeClass="active" className="Navbar-button Contact-button" to="Contact_me" smooth={true} duration={500} >Contact</Link>
     </div>
   )
 }
