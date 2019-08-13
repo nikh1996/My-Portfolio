@@ -7,15 +7,27 @@ let currentPosition = 0;
 function App() {
   return (
     <div className="App">
+      <Navbar></Navbar>
       <IntroDiv></IntroDiv>
       <AboutDiv></AboutDiv>
+      <ContactDiv></ContactDiv>
     </div>
   );
 }
 
+function Navbar() {
+  return (
+    <div className="Navbar">
+      <a href="#Intro" className="Navbar-button Home-button">Home</a>
+      <a href="#About_me" className="Navbar-button About-button">About Me</a>
+      <a href="#Contact_me" className="Navbar-button Contact-button">Contact</a>
+    </div>
+  )
+}
+
 function IntroDiv() {
   return (
-    <section id="Intro" className="Intro-div">
+    <section id="Intro" className="Background-section Intro-div">
     <div className="backgroundOverlay">
       <video autoPlay loop muted className="Background-video" src="water.mp4"></video>
     </div>
@@ -29,9 +41,28 @@ function IntroDiv() {
 
 function AboutDiv() {
   return (
-    <section id="About_me" className="About-div">
+    <section id="About_me" className="Background-section About-div">
     <div className="Inner-text">
       <h1 className="Title">About me</h1>
+    </div>
+  </section>
+  )
+}
+
+function ContactDiv() {
+  return (
+    <section id="Contact_me" className="Background-section Contact-div">
+    <div className="Inner-text">
+      <h1 className="Title">Like what you see?</h1>
+    </div>
+    <div className="row">
+      <div className="half-col">
+        <p>Download Resume</p>
+        <button type="button" className="btn btn-success"><i className="far fa-file-pdf"></i>&nbsp;&nbsp;Download Resume</button>
+      </div>
+      <div className="half-col">
+        <p>Contact Me</p>
+      </div>
     </div>
   </section>
   )

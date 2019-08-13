@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
+@import url("https://use.fontawesome.com/releases/v5.7.1/css/all.css");
 
 body {
   font-family: "Raleway", Arial, Helvetica, sans-serif;
@@ -8,9 +9,40 @@ body {
   text-align: center;
 }
 
-.Intro-div {
+.Navbar {
+  position: fixed;
+  color: white;
+  z-index: 15;
+  top: 0;
+  right: 0;
+  padding: 1rem 0;
+  background-color: white;
+  border-radius: 0 0 0 5px;
+}
+
+.Navbar-button {
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.Home-button:hover {
+  background-image: linear-gradient(#030377, #000);
+  border-radius: 0 0 0 5px;
+  color:white;
+}
+
+.About-button:hover {
+  background-image: linear-gradient(#282c34,#000);
+  color:white;
+}
+
+.Contact-button:hover {
+  background-image: linear-gradient(#000,purple);
+  color:white;
+}
+
+.Background-section {
   background-color: #282c34;
-  background-image: linear-gradient(blue, #000);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,22 +50,23 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Intro-div {
+  background-image: linear-gradient(#030377, #000);
 }
 
 .About-div {
-  background-color: #282c34;
-  background-image: linear-gradient(#282c34,blue);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-image: linear-gradient(#282c34,#000);
+  justify-content: flex-start;
+}
+
+.Contact-div {
+  background-image: linear-gradient(#000,purple);
+  justify-content: flex-start;
 }
 
 .Inner-text {
-  position: absolute;
   z-index: 10;
 }
 
@@ -104,4 +137,45 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.half-col {
+  flex: 50%;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-success {
+  color: #fff;
+  background: linear-gradient(#28a745,green);
+  border: 0;
+  padding: 1rem 5rem;
+  cursor: pointer
+}
+
+.btn-success:hover {
+  background: linear-gradient(#28a745,darkgreen);
 }
